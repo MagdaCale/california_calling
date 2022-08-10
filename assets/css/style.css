@@ -1,0 +1,159 @@
+@font-face {
+  font-family: larisch2;
+  src: url("./assets/font/Larish Neue Semibold.woff2");
+}
+@font-face {
+  font-family: larisch;
+  src: url("./assets/font/LarishNeueSemibold.woff");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.line {
+  background-image: url("./assets/img/line.svg");
+  height: 20vh;
+  background: #000;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  line-height: 80px;
+  font-size: 7rem;
+}
+
+h2 {
+  width: 85%;
+  font-size: 6rem;
+}
+
+h3 {
+  font-size: 4rem;
+}
+
+p {
+  font-family: sans-serif;
+  font-size: 1rem;
+  font-weight: 100;
+}
+
+/* +++++++++++++++ HERO SECTION +++++++++++++++ */
+.heroSection {
+  padding: 0 10vw;
+  background: #000;
+  color: #fff;
+}
+.heroSection article {
+  margin: 10vh 0;
+}
+.heroSection .heroArticle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.heroSection .h1Style {
+  color: #000;
+  -webkit-text-stroke: 1px #fff;
+}
+.heroSection .heroP {
+  margin: 5vh 0;
+}
+.heroSection .bearLogoBtn {
+  display: flex;
+  justify-content: space-between;
+}
+.heroSection .infoArticle {
+  padding-bottom: 15vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.heroSection .infoArticle .map {
+  width: 100%;
+}
+
+/* +++++++++++++++ Der BUTTON oben & unten +++++++++++++++ */
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-serif;
+  color: #fff;
+  text-decoration: none;
+  border: 0.5px solid;
+  width: 10vw;
+  height: 7vh;
+}
+.btn:hover {
+  background-color: #fff;
+  color: #000;
+  transition: 0.5s;
+}
+
+/* +++++++++++++++ Der BUTTON +++++++++++++++ */
+.sectionPositionRelative {
+  position: relative;
+}
+.sectionPositionRelative .bild:nth-of-type(1) {
+  position: absolute;
+  margin-top: -23vh;
+  margin-left: 72vw;
+  width: 25%;
+}
+.sectionPositionRelative .bild:nth-of-type(2) {
+  position: absolute;
+  z-index: 2;
+  margin-top: 55vh;
+  margin-left: 3vw;
+  width: 20%;
+}
+
+.stuckInTheMiddle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.stuckInTheMiddle div {
+  word-break: keep-all;
+  width: 30%;
+}
+.stuckInTheMiddle h3 {
+  width: 115%;
+  margin-bottom: 3vh;
+  font-size: 100px;
+  font-size: 6.25rem;
+  line-height: 80px;
+  line-height: 5rem;
+}
+.stuckInTheMiddle p {
+  word-break: keep-all;
+  width: 114%;
+  font-weight: 500;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 35px;
+  line-height: 2.1875rem;
+}
+.stuckInTheMiddle p:nth-of-type(1) {
+  margin-bottom: 50vh;
+}
+
+.theGoldenBear {
+  background: #000;
+  color: #fff;
+}
+
+.bild {
+  width: 15%;
+}
+
+.biggerStyle {
+  width: 20%;
+}
+
+/*# sourceMappingURL=style.css.map */

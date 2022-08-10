@@ -1,0 +1,195 @@
+@import './colors.scss';
+@import './fonts.scss';
+
+
+@mixin rhythm($sizeValue: 12, $heightValue: 20, $weightValue: 200) {
+	@include font-size($sizeValue);
+	@include line-height($heightValue);
+}
+
+@mixin font-size ($sizeValue: 12) {
+    font-size: $sizeValue + px;
+	font-size: (0.0625 * $sizeValue) + rem;
+}
+
+@mixin line-height ($heightValue: 20){
+    line-height: $heightValue + px;
+    line-height: (0.0625 * $heightValue) + rem;
+}
+
+
+@mixin pSize ($fs, $fw) {
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+@mixin h1Size ($fs){
+    font-size: $fs;
+}
+
+@mixin h2Size ($fs){
+    font-size: $fs;
+}
+
+@mixin h3Size ($fs){
+    font-size: $fs;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.line {
+    background-image: url('./assets/img/line.svg');
+    height: 20vh;
+    background: $black;
+}
+
+h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 80px;
+    @include h1Size (7rem)
+}
+
+h2 {
+    width: 85%;
+    @include h2Size (6rem)
+}
+
+h3 {
+    @include h3Size (4rem)
+}
+
+p{
+    font-family: sans-serif;
+    @include pSize (1rem, 100)
+}
+
+
+/* +++++++++++++++ HERO SECTION +++++++++++++++ */
+
+.heroSection {
+    padding: 0 10vw;
+    background: #000;
+    color: $white;
+    article{
+        margin: 10vh 0;
+    }
+    .heroArticle{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .h1Style{
+        color: $black;
+        -webkit-text-stroke: 1px $white;
+    }
+    .heroP{
+        margin: 5vh 0;
+    }
+    .bearLogoBtn{
+        display: flex;
+        justify-content: space-between;
+    }
+    .infoArticle{
+        padding-bottom: 15vh;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        .map{
+            width: 100%;
+        }
+    }
+}
+
+
+/* +++++++++++++++ Der BUTTON oben & unten +++++++++++++++ */
+
+.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    color: $white;
+    text-decoration: none;
+    border: 0.5px solid;
+    width: 10vw;
+    height: 7vh;
+    &:hover{
+        background-color: $white;
+        color: $black;
+        transition: 0.5s;
+    }
+}
+
+/* +++++++++++++++ Der BUTTON +++++++++++++++ */
+
+
+.sectionPositionRelative {
+    position: relative;
+
+    .bild:nth-of-type(1){
+        position: absolute;
+        margin-top: -23vh;
+        margin-left: 72vw;
+        width: 25%;
+
+    }
+
+    .bild:nth-of-type(2){
+        position: absolute;
+        z-index: 2;
+        margin-top: 55vh;
+        margin-left: 3vw;
+        width: 20%;
+    }
+
+}
+.stuckInTheMiddle{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    div{
+        word-break: keep-all;
+        width: 30%;
+    }
+    h3{
+        width: 115%;
+        margin-bottom: 3vh;
+        @include rhythm (100, 80)
+    }
+    p{
+        word-break: keep-all;
+        width: 114%;
+        font-weight: 500;
+        &:nth-of-type(1){
+            margin-bottom: 50vh;
+        }
+        @include rhythm (20, 35)
+    }
+}
+
+
+.theGoldenBear{
+    background: $black;
+    color: $white;
+}
+
+
+
+
+
+
+
+.bild {
+    width: 15%;
+}
+
+.biggerStyle{
+    width: 20%;
+}
