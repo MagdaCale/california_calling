@@ -1,0 +1,47 @@
+@mixin rhythm($sizeValue: 12, $heightValue: 20, $weightValue: 200) {
+	@include font-size($sizeValue);
+	@include line-height($heightValue);
+}
+
+@mixin font-size ($sizeValue: 12) {
+    font-size: $sizeValue + px;
+	font-size: (0.0625 * $sizeValue) + rem;
+}
+
+@mixin line-height ($heightValue: 20){
+    line-height: $heightValue + px;
+    line-height: (0.0625 * $heightValue) + rem;
+}
+
+@mixin pSize ($fs, $fw) {
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+@mixin font-Size ($fs){
+    font-size: $fs;
+}
+
+@mixin middleText {
+    word-break: keep-all;
+    width: 114%;
+    font-weight: 500;
+    padding-bottom: 50vh;
+}
+
+@mixin theBear {
+    display: grid;
+    grid-template-columns: 50% 50% ;
+    padding: 30vh 10vw 90vh 10vw;
+    .bearDiv1{
+        h3{
+            @include font-Size (5.5rem)
+        }
+    }
+    .bearDiv2{
+        h4{
+            margin: 3vh 0;
+            width: 101%;
+        }
+    }
+}

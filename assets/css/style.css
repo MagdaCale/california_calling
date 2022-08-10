@@ -1,10 +1,6 @@
 @font-face {
-  font-family: larisch2;
-  src: url("./assets/font/Larish Neue Semibold.woff2");
-}
-@font-face {
-  font-family: larisch;
-  src: url("./assets/font/LarishNeueSemibold.woff");
+  font-family: "larisch";
+  src: url("../font/LarishNeueSemibold.woff");
 }
 * {
   margin: 0;
@@ -19,31 +15,38 @@
 }
 
 h1 {
+  font-family: "larisch";
   display: flex;
   justify-content: center;
   align-items: center;
-  line-height: 80px;
+  line-height: 90px;
   font-size: 7rem;
 }
 
 h2 {
-  width: 85%;
-  font-size: 6rem;
+  font-family: "larisch";
+  font-size: 6.5rem;
 }
 
 h3 {
+  font-family: "larisch";
   font-size: 4rem;
+}
+
+h4 {
+  font-family: "larisch";
+  font-size: 2rem;
 }
 
 p {
   font-family: sans-serif;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 100;
 }
 
 /* +++++++++++++++ HERO SECTION +++++++++++++++ */
 .heroSection {
-  padding: 0 10vw;
+  padding: 0 10vw 15vh 10vw;
   background: #000;
   color: #fff;
 }
@@ -68,12 +71,24 @@ p {
   justify-content: space-between;
 }
 .heroSection .infoArticle {
-  padding-bottom: 15vh;
   display: grid;
   grid-template-columns: 1fr 1fr;
+  position: relative;
 }
-.heroSection .infoArticle .map {
-  width: 100%;
+.heroSection .infoArticle .info {
+  margin-top: 5vh;
+}
+.heroSection .infoArticle p {
+  margin: 2vh 0;
+}
+.heroSection .infoArticle .divMap {
+  position: absolute;
+  z-index: 2;
+}
+.heroSection .infoArticle .divMap:nth-of-type(1) {
+  margin-top: -83vh;
+  margin-left: 50vw;
+  width: 50%;
 }
 
 /* +++++++++++++++ Der BUTTON oben & unten +++++++++++++++ */
@@ -98,62 +113,165 @@ p {
 .sectionPositionRelative {
   position: relative;
 }
-.sectionPositionRelative .bild:nth-of-type(1) {
-  position: absolute;
-  margin-top: -23vh;
-  margin-left: 72vw;
-  width: 25%;
-}
-.sectionPositionRelative .bild:nth-of-type(2) {
+.sectionPositionRelative .bild {
   position: absolute;
   z-index: 2;
-  margin-top: 55vh;
-  margin-left: 3vw;
-  width: 20%;
 }
-
-.stuckInTheMiddle {
+.sectionPositionRelative .bild:nth-of-type(1) {
+  margin-top: -72vh;
+  margin-left: 66vw;
+  width: 29%;
+}
+.sectionPositionRelative .bild:nth-of-type(2) {
+  margin-top: -26vh;
+  margin-left: 3vw;
+  width: 24%;
+}
+.sectionPositionRelative .bild:nth-of-type(3) {
+  margin-top: 33vh;
+  margin-left: 78vw;
+  width: 21%;
+}
+.sectionPositionRelative .bild:nth-of-type(4) {
+  margin-top: 65vh;
+  margin-left: 16vw;
+  width: 25%;
+}
+.sectionPositionRelative .bild:nth-of-type(5) {
+  margin-top: 90vh;
+  margin-left: 58vw;
+  width: 25%;
+}
+.sectionPositionRelative .bild:nth-of-type(6) {
+  margin-top: 128vh;
+  width: 24%;
+}
+.sectionPositionRelative .bild:nth-of-type(7) {
+  margin-top: 175vh;
+  margin-left: 48vw;
+  width: 37%;
+}
+.sectionPositionRelative .stuckInTheMiddle {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  margin-top: 60vh;
 }
-.stuckInTheMiddle div {
+.sectionPositionRelative .stuckInTheMiddle div {
   word-break: keep-all;
   width: 30%;
 }
-.stuckInTheMiddle h3 {
-  width: 115%;
+.sectionPositionRelative .stuckInTheMiddle h3 {
+  width: 125%;
   margin-bottom: 3vh;
   font-size: 100px;
   font-size: 6.25rem;
   line-height: 80px;
   line-height: 5rem;
 }
-.stuckInTheMiddle p {
+.sectionPositionRelative .stuckInTheMiddle .inTheMiddleP {
   word-break: keep-all;
   width: 114%;
   font-weight: 500;
+  padding-bottom: 50vh;
+  padding-bottom: 92vh;
   font-size: 20px;
   font-size: 1.25rem;
   line-height: 35px;
   line-height: 2.1875rem;
 }
-.stuckInTheMiddle p:nth-of-type(1) {
-  margin-bottom: 50vh;
+.sectionPositionRelative .stuckInTheMiddle .inTheMiddleP_2 {
+  word-break: keep-all;
+  width: 114%;
+  font-weight: 500;
+  padding-bottom: 50vh;
+  font-size: 20px;
+  font-size: 1.25rem;
+  line-height: 35px;
+  line-height: 2.1875rem;
 }
 
 .theGoldenBear {
   background: #000;
   color: #fff;
+  position: relative;
+}
+.theGoldenBear .goldenArticle {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 30vh 10vw 90vh 10vw;
+}
+.theGoldenBear .goldenArticle .bearDiv1 h3 {
+  font-size: 5.5rem;
+}
+.theGoldenBear .goldenArticle .bearDiv2 h4 {
+  margin: 3vh 0;
+  width: 101%;
+}
+.theGoldenBear h3 {
+  width: 50%;
+}
+.theGoldenBear .bearImg {
+  position: absolute;
+  z-index: 2;
+}
+.theGoldenBear .bearImg:nth-of-type(1) {
+  width: 50%;
+  margin-top: -75vh;
+  margin-left: 12vw;
+}
+.theGoldenBear .bearImg:nth-of-type(2) {
+  width: 27%;
+  margin-top: -55vh;
+  margin-left: 57vw;
 }
 
-.bild {
-  width: 15%;
+.thePoppyBear {
+  background: #fff;
+  color: #000;
+  position: relative;
+}
+.thePoppyBear .poppyArticle {
+  margin: 30vh 0 20vh 0;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  padding: 30vh 10vw 90vh 10vw;
+}
+.thePoppyBear .poppyArticle .bearDiv1 h3 {
+  font-size: 5.5rem;
+}
+.thePoppyBear .poppyArticle .bearDiv2 h4 {
+  margin: 3vh 0;
+  width: 101%;
+}
+.thePoppyBear h3 {
+  width: 50%;
+}
+.thePoppyBear .flowerImg {
+  position: absolute;
+  z-index: 2;
+}
+.thePoppyBear .flowerImg:nth-of-type(1) {
+  width: 50%;
+  margin-top: -75vh;
+  margin-left: 12vw;
+}
+.thePoppyBear .flowerImg:nth-of-type(2) {
+  width: 27%;
+  margin-top: -55vh;
+  margin-left: 57vw;
 }
 
-.biggerStyle {
-  width: 20%;
+.rotatingAnimation {
+  position: relative;
+}
+.rotatingAnimation .rotateImg {
+  z-index: 1;
+  width: 36%;
+  position: absolute;
+  margin-left: 75vw;
+  margin-top: -20vh;
 }
 
 /*# sourceMappingURL=style.css.map */

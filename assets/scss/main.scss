@@ -1,45 +1,19 @@
+@font-face {
+    font-family:'larisch';
+    src: url('../font/LarishNeueSemibold.woff');
+}
+
 @import './colors.scss';
-@import './fonts.scss';
+@import './mixin.scss';
 
 
-@mixin rhythm($sizeValue: 12, $heightValue: 20, $weightValue: 200) {
-	@include font-size($sizeValue);
-	@include line-height($heightValue);
-}
-
-@mixin font-size ($sizeValue: 12) {
-    font-size: $sizeValue + px;
-	font-size: (0.0625 * $sizeValue) + rem;
-}
-
-@mixin line-height ($heightValue: 20){
-    line-height: $heightValue + px;
-    line-height: (0.0625 * $heightValue) + rem;
-}
-
-
-@mixin pSize ($fs, $fw) {
-    font-size: $fs;
-    font-weight: $fw;
-}
-
-@mixin h1Size ($fs){
-    font-size: $fs;
-}
-
-@mixin h2Size ($fs){
-    font-size: $fs;
-}
-
-@mixin h3Size ($fs){
-    font-size: $fs;
-}
 
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
+
 
 .line {
     background-image: url('./assets/img/line.svg');
@@ -48,32 +22,39 @@
 }
 
 h1 {
+    font-family: 'larisch';
     display: flex;
     justify-content: center;
     align-items: center;
-    line-height: 80px;
-    @include h1Size (7rem)
+    line-height: 90px;
+    @include font-Size (7rem)   
 }
 
 h2 {
-    width: 85%;
-    @include h2Size (6rem)
+    font-family: 'larisch';
+    @include font-Size (6.5rem)
 }
 
 h3 {
-    @include h3Size (4rem)
+    font-family: 'larisch';
+    @include font-Size (4rem)
+}
+
+h4{
+    font-family: 'larisch';
+    @include font-Size (2rem)
 }
 
 p{
     font-family: sans-serif;
-    @include pSize (1rem, 100)
+    @include pSize (1.2rem, 100)
 }
 
 
 /* +++++++++++++++ HERO SECTION +++++++++++++++ */
 
 .heroSection {
-    padding: 0 10vw;
+    padding: 0 10vw 15vh 10vw;
     background: #000;
     color: $white;
     article{
@@ -97,13 +78,26 @@ p{
         justify-content: space-between;
     }
     .infoArticle{
-        padding-bottom: 15vh;
         display: grid;
         grid-template-columns: 1fr 1fr;
-        .map{
-            width: 100%;
+        position: relative;
+        .info{
+            margin-top: 5vh;
+        }
+        p{
+            margin: 2vh 0;
+        }
+        .divMap{
+            position:absolute;
+            z-index: 2;
+            &:nth-of-type(1){
+                margin-top: -83vh;
+                margin-left: 50vw;
+                width: 50%;
+            }
         }
     }
+
 }
 
 
@@ -132,64 +126,140 @@ p{
 .sectionPositionRelative {
     position: relative;
 
-    .bild:nth-of-type(1){
-        position: absolute;
-        margin-top: -23vh;
-        margin-left: 72vw;
-        width: 25%;
-
-    }
-
-    .bild:nth-of-type(2){
+    .bild{
         position: absolute;
         z-index: 2;
-        margin-top: 55vh;
-        margin-left: 3vw;
-        width: 20%;
-    }
-
-}
-.stuckInTheMiddle{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    div{
-        word-break: keep-all;
-        width: 30%;
-    }
-    h3{
-        width: 115%;
-        margin-bottom: 3vh;
-        @include rhythm (100, 80)
-    }
-    p{
-        word-break: keep-all;
-        width: 114%;
-        font-weight: 500;
         &:nth-of-type(1){
-            margin-bottom: 50vh;
+            margin-top: -72vh;
+            margin-left: 66vw;
+            width: 29%;
         }
-        @include rhythm (20, 35)
+        &:nth-of-type(2){
+            margin-top: -26vh;
+            margin-left: 3vw;
+            width: 24%;
+        }
+        &:nth-of-type(3){
+            margin-top: 33vh;
+            margin-left: 78vw;
+            width: 21%;
+        }
+        &:nth-of-type(4){
+            margin-top: 65vh;
+            margin-left: 16vw;
+            width: 25%;
+        }
+        &:nth-of-type(5){
+            margin-top: 90vh;
+            margin-left: 58vw;
+            width: 25%;
+        }
+        &:nth-of-type(6){
+            margin-top: 128vh;
+            width: 24%;
+        }
+        &:nth-of-type(7){
+            margin-top: 175vh;
+            margin-left: 48vw;
+            width: 37%;
+        }
+    }
+    .stuckInTheMiddle{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-top: 60vh;
+        div{
+            word-break: keep-all;
+            width: 30%;
+        }
+        h3{
+            width: 125%;
+            margin-bottom: 3vh;
+            @include rhythm (100, 80)
+        }
+        .inTheMiddleP{
+            @include middleText;
+            padding-bottom: 92vh;
+            @include rhythm (20, 35)
+        }
+        .inTheMiddleP_2{
+            @include middleText;
+            @include rhythm (20, 35);
+            
+    
+        }
     }
 }
+
 
 
 .theGoldenBear{
     background: $black;
     color: $white;
+    position: relative;
+    .goldenArticle{
+        @include theBear;
+    }
+    h3{
+        width: 50%;
+    }
+    .bearImg{
+        position: absolute;
+        z-index: 2;
+        &:nth-of-type(1){
+            width: 50%;
+            margin-top: -75vh;
+            margin-left: 12vw;
+        }
+        &:nth-of-type(2){
+            width: 27%;
+            margin-top: -55vh;
+            margin-left: 57vw;
+        }
+    }
+}
+
+.thePoppyBear{
+    background: $white;
+    color: $black;
+    position: relative;
+    .poppyArticle{
+        margin: 30vh 0 20vh 0;
+        @include theBear;
+    }
+    h3{
+        width: 50%;
+    }
+    .flowerImg{
+        position: absolute;
+        z-index: 2;
+        &:nth-of-type(1){
+            width: 50%;
+            margin-top: -75vh;
+            margin-left: 12vw;
+        }
+        &:nth-of-type(2){
+            width: 27%;
+            margin-top: -55vh;
+            margin-left: 57vw;
+        
+        }
+    }
+}
+
+
+.rotatingAnimation{
+    position: relative;
+    .rotateImg{
+        z-index: 1;
+        width: 36%;
+        position: absolute;
+        margin-left: 75vw;
+        margin-top: -20vh;
+    }
 }
 
 
 
-
-
-
-
-.bild {
-    width: 15%;
-}
-
-.biggerStyle{
-    width: 20%;
-}
