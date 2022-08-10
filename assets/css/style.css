@@ -1,11 +1,50 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @font-face {
   font-family: "larisch";
   src: url("../font/LarishNeueSemibold.woff");
 }
+/* font-family: 'Work Sans', sans-serif; */
+@keyframes translater {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* @mixin leftRigt {
+    background: $white;
+    z-index: 1;
+    position: absolute;
+    transform: rotate(40deg);
+    margin-top: -60vh;
+    margin-left: 30vw;
+    .leftToRight{
+        animation:  move ease-in-out infinite forwards alternate-reverse;
+    }
+
+
+}
+
+
+@keyframes move {
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(400px);
+    }
+
+} */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+html {
+  overflow: scroll;
+  overflow-x: hidden;
 }
 
 .line {
@@ -35,13 +74,13 @@ h3 {
 
 h4 {
   font-family: "larisch";
-  font-size: 2rem;
+  font-size: 2.5rem;
 }
 
 p {
-  font-family: sans-serif;
+  font-family: "Work Sans", sans-serif;
   font-size: 1.2rem;
-  font-weight: 100;
+  font-weight: 400;
 }
 
 /* +++++++++++++++ HERO SECTION +++++++++++++++ */
@@ -64,11 +103,15 @@ p {
   -webkit-text-stroke: 1px #fff;
 }
 .heroSection .heroP {
-  margin: 5vh 0;
+  margin: 3vh 0;
 }
 .heroSection .bearLogoBtn {
   display: flex;
   justify-content: space-between;
+  margin: 25vh 0;
+}
+.heroSection .bearLogoBtn img {
+  width: 7%;
 }
 .heroSection .infoArticle {
   display: grid;
@@ -100,8 +143,9 @@ p {
   color: #fff;
   text-decoration: none;
   border: 0.5px solid;
-  width: 10vw;
-  height: 7vh;
+  width: 11vw;
+  height: 9vh;
+  font-size: 1.3rem;
 }
 .btn:hover {
   background-color: #fff;
@@ -231,6 +275,7 @@ p {
   background: #fff;
   color: #000;
   position: relative;
+  padding-bottom: 30vh;
 }
 .thePoppyBear .poppyArticle {
   margin: 30vh 0 20vh 0;
@@ -253,16 +298,26 @@ p {
   z-index: 2;
 }
 .thePoppyBear .flowerImg:nth-of-type(1) {
-  width: 50%;
-  margin-top: -75vh;
-  margin-left: 12vw;
+  width: 55%;
+  margin-top: -86vh;
+  margin-left: 37vw;
 }
 .thePoppyBear .flowerImg:nth-of-type(2) {
-  width: 27%;
-  margin-top: -55vh;
-  margin-left: 57vw;
+  width: 30%;
+  margin-top: -68vh;
+  margin-left: 13vw;
 }
 
+/* .movingText{
+    position: relative;
+    div{
+        @include leftRigt;
+    }
+    span{
+        color: $white;
+        -webkit-text-stroke: 2px $black;
+    }
+} */
 .rotatingAnimation {
   position: relative;
 }
@@ -272,6 +327,50 @@ p {
   position: absolute;
   margin-left: 75vw;
   margin-top: -20vh;
+  animation: translater 15s linear 0s infinite normal none running;
+}
+
+.join {
+  padding: 25vh 10vw 20vh 10vw;
+  background: #000;
+  color: white;
+}
+.join h4 {
+  word-break: keep-all;
+  margin: 3vh 0;
+  width: 53%;
+}
+
+footer {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  background-color: #000;
+  height: 20vh;
+  padding: 0 10vw;
+}
+footer .icons {
+  height: 25px;
+}
+footer .icons img {
+  height: 100%;
+  margin-right: 10px;
+}
+footer p {
+  color: #fff;
+  margin: 3vh 0;
+}
+footer .redCrossLogo {
+  height: 40px;
+  display: flex;
+  justify-content: end;
+  align-self: center;
+}
+footer .redCrossLogo img:nth-of-type(1) {
+  height: 160%;
+}
+footer .redCrossLogo img:nth-of-type(2) {
+  height: 90%;
+  margin: 5vh 0 0;
 }
 
 /*# sourceMappingURL=style.css.map */

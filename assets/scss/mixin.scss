@@ -22,6 +22,24 @@
     font-size: $fs;
 }
 
+@mixin button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: sans-serif;
+    color: $white;
+    text-decoration: none;
+    border: 0.5px solid;
+    width: 11vw;
+    height: 9vh;
+    @include font-Size(1.3rem);
+    &:hover{
+        background-color: $white;
+        color: $black;
+        transition: 0.5s;
+    }
+}
+
 @mixin middleText {
     word-break: keep-all;
     width: 114%;
@@ -45,3 +63,62 @@
         }
     }
 }
+
+@mixin join {
+    padding: 25vh 10vw 20vh 10vw;
+    h4{
+        word-break: keep-all;
+        margin: 3vh 0;
+        width: 53%;
+    }
+
+}
+
+@mixin spinImg {
+    z-index: 1;
+    width: 36%;
+    position: absolute;
+    margin-left: 75vw;
+    margin-top: -20vh;
+    animation: translater  15s linear 0s infinite normal none running;
+}
+
+@mixin icons ($height, $h, $w, $color) {
+    background-color: $color;
+    height: $height;
+    padding: $h $w ;
+}
+
+@keyframes translater {
+    0%{
+        transform: rotate(0deg);
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+/* @mixin leftRigt {
+    background: $white;
+    z-index: 1;
+    position: absolute;
+    transform: rotate(40deg);
+    margin-top: -60vh;
+    margin-left: 30vw;
+    .leftToRight{
+        animation:  move ease-in-out infinite forwards alternate-reverse;
+    }
+
+    
+}
+
+
+@keyframes move {
+    from{
+        transform: translateX(0px);
+    }
+    to{
+        transform: translateX(400px);
+    }
+
+} */
